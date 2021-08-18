@@ -1,13 +1,6 @@
 use std::collections::HashMap;
 
-fn main() {
-  let parentheses = "[(([{}]){[]})]{}".to_string();
-  let is_valid = valid_parentheses(&parentheses);
-
-  println!("{:?} is valid parentheses: {:?}", parentheses, is_valid);
-}
-
-fn valid_parentheses(str: &String) -> bool {
+pub fn valid_parentheses(str: &String) -> bool {
   let mut pairs = HashMap::new();
   let mut stack = Vec::new();
 
@@ -40,4 +33,16 @@ fn valid_parentheses(str: &String) -> bool {
   }
 
   return true;
+}
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+    #[test]
+    fn it_works() {
+      let parentheses = "[(([{}]){[]})]{}".to_string();
+
+        assert_eq!(valid_parentheses(&parentheses), true);
+    }
 }

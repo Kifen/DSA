@@ -1,14 +1,4 @@
-//use math::round;
-
-fn main() {
-  let arr = vec![1,3,4,5,6,7,8];
-  let target = 9;
-
-  let index = binary_search(&arr, &target);
-  println!("Index of target {:?} in vector {:?} is {}", target, arr, index);
-}
-
-fn binary_search(arr: &Vec<i32>, target: &i32) -> i32 {
+pub fn binary_search(arr: &Vec<i32>, target: &i32) -> i32 {
   let mut low: i32 = 0;
   let mut high: i32 = (arr.len() - 1) as i32;
 
@@ -27,4 +17,17 @@ fn binary_search(arr: &Vec<i32>, target: &i32) -> i32 {
   }
 
   return low;
+}
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+    #[test]
+    fn it_works() {
+      let arr = vec![1,3,4,5,6,7,8, 9, 12, 33, 35, 45];
+      let target = 35;
+      
+        assert_eq!(binary_search(&arr, &target), 10);
+    }
 }
