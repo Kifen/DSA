@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
-	ht"dsa.com/HashTable"
+	ht"dsa.com/UniqueChar"
 	ga"dsa.com/GroupAnograms"
 	vp"dsa.com/ValidPalindrome"
 	vp2"dsa.com/ValidParentheses"
