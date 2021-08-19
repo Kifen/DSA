@@ -22,7 +22,6 @@ mod tests {
     #[test]
     fn it_works() {
       let palindrome = "rotator";
-
-        assert_eq!(valid_palindrome(palindrome.to_string()), true);
+      assert_eq!(valid_palindrome(palindrome.to_string()), true);
     }
 }
